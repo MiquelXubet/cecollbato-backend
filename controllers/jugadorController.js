@@ -38,8 +38,29 @@ async function getJugadors(req,res) {
     });
 }
 
+async function updateJugador(req,res) {
+  Jugador.findByIdAndUpdate(
+    req.params.id,
+    {
+      $set: req.body
+    },
+    {
+      new: true //You should set the new option to true to return the document after update was applied.
+    }
+  )
+    .then(updatedJugador => {
+      console.log('Updated jugador: ', updatedJugador)
+      res.status(200).json(updatedJugador)
+    })
+    .catch(err => {
+      console.log('Error while updating the jugador: ', err)
+      res.status(400).json(err)
+    });
+}
+
 module.exports = {
     createJugador,
     getJugadors,
-    getJugadorById
+    getJugadorById,
+    updateJugador
 }
