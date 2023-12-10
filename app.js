@@ -2,6 +2,8 @@ const express = require('express')
 const app = express()
 const port = 8000
 
+app.use(express.json())
+
 require('dotenv').config();
 
 const mongoose = require("mongoose");
@@ -11,9 +13,12 @@ async function main() {
 }
 main().catch(err => console.log(err));
 
+var jugadors = require('./routes/jugadors.js')
+app.use('/jugadors', jugadors)
+
 app.get('/', (req, res) => {
   console.log(process.env.DB_USER)
-  res.send('Hello World!')
+  res.send('Hello CE Collbató!')
 })
 
 app.listen(port, () => {
