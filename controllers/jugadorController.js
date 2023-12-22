@@ -58,9 +58,27 @@ async function updateJugador(req,res) {
     });
 }
 
+async function deleteJugador(req,res) {
+  Jugador.findByIdAndDelete(
+    req.params.id,
+    {
+      $set: req.body
+    },
+  )
+    .then(deletedJugador => {
+      console.log('Deleted jugador with id: ${deletedJugador._id}')
+      res.status(200).json(deletedJugador)
+    })
+    .catch(err => {
+      console.log('Error while deleting one jugador: ', err)
+      res.status(400).json(err)
+    });   
+}
+
 module.exports = {
     createJugador,
     getJugadors,
     getJugadorById,
-    updateJugador
+    updateJugador,
+    deleteJugador
 }
