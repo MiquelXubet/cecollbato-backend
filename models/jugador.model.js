@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 // here we are getting access to Schema class from mongoose
 const Schema = mongoose.Schema;
@@ -11,79 +11,86 @@ const jugadorSchema = new Schema({
     require: true,
     trim: true,
   },
-  Primer_Cognom:  {
-    type: String,
-    require: true,
-    trim: true,
-  },
-  Segon_Cognom: {
-    type: String,
-    require: true,
-    trim: true,
-  },
-  DNI: {
-    type: String,
-    require: true,
-    trim: true,
-  },
-  Any_de_naixement: {
-    type: String,
-    require: true,
-    trim: true,
-  },
-  Adreça: {
-    type: String,
-    require: true,
-    trim: true,
-  },
-  Número: {
-    type: String,
-    require: true,
-    trim: true,
-  },
-  Pis: Number,
-  Porta: Number,
-  Població: {
-    type: String,
-    require: true,
-    trim: true,
-  },
-  Codi_Postal: {
-    type: String,
-    require: true,
-    trim: true,
-  },
-  Nom_del_Pare: {
-    type: String,
-    require: true,
-    trim: true,
-  },
-  Nom_de_la_Mare: {
-    type: String,
-    require: true,
-    trim: true,
-  },
-  Telèfon_del_Pare: {
-    type: String,
-    require: true,
-    trim: true,
-  },
-  Telèfon_de_la_Mare: {
-    type: String,
-    require: true,
-    trim: true,
-  },
-  Data_reconeixement_mèdic: Date,
+  // Primer_Cognom:  {
+  //   type: String,
+  //   require: true,
+  //   trim: true,
+  // },
+  // Segon_Cognom: {
+  //   type: String,
+  //   require: true,
+  //   trim: true,
+  // },
+  // DNI: {
+  //   type: String,
+  //   require: true,
+  //   trim: true,
+  // },
+  // Any_de_naixement: {
+  //   type: String,
+  //   require: true,
+  //   trim: true,
+  // },
+  // Adreça: {
+  //   type: String,
+  //   require: true,
+  //   trim: true,
+  // },
+  // Número: {
+  //   type: String,
+  //   require: true,
+  //   trim: true,
+  // },
+  // Pis: Number,
+  // Porta: Number,
+  // Població: {
+  //   type: String,
+  //   require: true,
+  //   trim: true,
+  // },
+  // Codi_Postal: {
+  //   type: String,
+  //   require: true,
+  //   trim: true,
+  // },
+  // Nom_del_Pare: {
+  //   type: String,
+  //   require: true,
+  //   trim: true,
+  // },
+  // Nom_de_la_Mare: {
+  //   type: String,
+  //   require: true,
+  //   trim: true,
+  // },
+  // Telèfon_del_Pare: {
+  //   type: String,
+  //   require: true,
+  //   trim: true,
+  // },
+  // Telèfon_de_la_Mare: {
+  //   type: String,
+  //   require: true,
+  //   trim: true,
+  // },
+  // Data_reconeixement_mèdic: {
+  //   type: Date,
+  //   trim: true
+  // },
   Correu_electrònic: {
     type: String,
     require: true,
     trim: true,
   },
-  Imatge_DNI: String,
-}, {
-  timestamps: true
-},
-);
+  Password: {
+    type: String,
+    require: true,
+    trim: true,
+  },
+  //   Imatge_DNI: String,
+  // }, {
+  //   timestamps: true
+});
 
 // Jugador is our mongoose model class
 // all jugadors in jugadors collection will share these properties
